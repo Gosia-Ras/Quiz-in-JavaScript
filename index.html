@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/quiz.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body class="body">
+
+    <header class="header">A simple HTML, CSS and JavaScript quiz</header>
+
+    <p class="quiz__instruction">Pick correct answers and click on the "Send" button to check your score &#9989;</p>
+
+    <div class="js-quiz">
+        <form>
+            <fieldset class="quiz">
+                <legend class="quiz__question">1. HTML: is HTML a programming language?</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question1" class="quiz__answer" value="false"> Yes
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question1" class="quiz__answer js-answer1" value="true" required ><span
+                                class="quiz__answer1--regular"> No</span>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="quiz">
+                <legend class="quiz__question">2. HTML: Standard name for the main HTML file is:</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question2" class="quiz__answer " value="false"> html.html
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question2" class="quiz__answer" value="false"> main.html
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question2" class="quiz__answer js-answer2" value="true" required >
+                            <span class="quiz__answer2--regular"> index.html</span>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="quiz">
+                <legend class="quiz__question">3. HTML: How to tag an element in HTML?</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question3" class="quiz__answer " value="false"> { }
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question3" class="quiz__answer " value="false"> [ ]
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question3" class="quiz__answer  js-answer3" value="true" required ><span
+                                class="quiz__answer3--regular"> &#60;
+                                &#62;</span>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="quiz">
+                <legend class="quiz__question">4. HTML: When linking Java Script to HTML file, it is recommended to add
+                    an
+                    attribute which forces the script to run after the page finished loading. What is the name of this
+                    attribute?</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question4" class="quiz__answer " value="false"> href
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question4" value="true" required  class="quiz__answer  js-answer4"><span
+                                class="quiz__answer4--regular"> defer
+                            </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question4" class="quiz__answer " value="false"> async
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="quiz">
+                <legend class="quiz__question">5. CSS: Settings of border-width: 30px 30px 10px 40px;. Which border is
+                    the smallest?</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question5" class="quiz__answer " value="false"> top
+                            border
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question5" value="true" required  class="quiz__answer  js-answer5"><span
+                                class="quiz__answer5--regular"> bottom
+                                border</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question5" class="quiz__answer " value="false"> left border
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question5" class="quiz__answer " value="false"> right border
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="quiz">
+                <legend class="quiz__question">6. HTML: When creating a form, which attribute sets the minimum amount of
+                    letters to be entered into input field?</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question6" class="quiz__answer " value="false"> min=""
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question6" value="true" required  class="quiz__answer  js-answer6"><span
+                                class="quiz__answer6--regular"> min-length="" </span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question6" class="quiz__answer " value="false">
+                            minimum-amount-letters=""
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="quiz">
+                <legend class="quiz__question"> 7. JavaScript: mathematical operations have a certain order. Pick
+                    correct. </legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question7" class="quiz__answer " value="false"> + - / *
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question7" class="quiz__answer " value="false"> / - + *
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question7" class="quiz__answer " value="false"> - / * +
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question7" value="true" required class="quiz__answer  js-answer7"><span
+                                class="quiz__answer7--regular"> * / + -</span>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="quiz">
+                <legend class="quiz__question">8. CSS: A class can be further modified in CSS by adding a
+                    "pseudo-class":</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question8" value="true" required  class="quiz__answer  js-answer8"><span
+                                class="quiz__answer8--regular"> Yes</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question8" class="quiz__answer " value="false"> No
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="quiz">
+                <legend class="quiz__question">9. JavaScript: name of the element can start with:</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question9" class="quiz__answer " value="false"> letter
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question9" class="quiz__answer " value="false"> $
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question9" class="quiz__answer " value="false"> _
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question9" value="true" required  class="quiz__answer  js-answer9"><span
+                                class="quiz__answer9--regular"> All of the above</span>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="quiz">
+                <legend class="quiz__question">10. HTML: Where is the correct place to insert a JavaScript?</legend>
+                <ul class="quiz__list">
+                    <li>
+                        <label>
+                            <input type="radio" name="question10" class="quiz__answer" value="false"> body
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question10" value="true" required  class="quiz__answer js-answer10"><span
+                                class="quiz__answer10--regular"> head or body</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="question10" class="quiz__answer " value="false"> head
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <p>
+                <button class="quiz__button" type="submit">Send</button>
+                <button class="quiz__button" type="reset">Reset</button>
+            </p>
+
+        </form>
+    </div>
+
+    <div>
+        <p class="quiz__result js-result"></p>
+    </div>
+
+</body>
+
+</html>
