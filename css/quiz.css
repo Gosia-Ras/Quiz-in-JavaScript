@@ -22,7 +22,7 @@
     padding: 10px;
 }
 
-.quiz__answer {
+.js-quiz__answer {
     margin-top: 15px;
 }
 
@@ -46,6 +46,6 @@
     max-width: 40%;
 }
 
-.quiz__answer--correct {
+.js-quiz__answer--correct {
     background-color: rgba(1, 197, 1, 0.596);
 }

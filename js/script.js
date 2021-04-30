@@ -10,16 +10,16 @@
     const question9True = document.querySelector(".js-answer9");
     const question10True = document.querySelector(".js-answer10");
 
-    const quizAnswer1 = document.querySelector(".quiz__answer1--regular");
-    const quizAnswer2 = document.querySelector(".quiz__answer2--regular");
-    const quizAnswer3 = document.querySelector(".quiz__answer3--regular");
-    const quizAnswer4 = document.querySelector(".quiz__answer4--regular");
-    const quizAnswer5 = document.querySelector(".quiz__answer5--regular");
-    const quizAnswer6 = document.querySelector(".quiz__answer6--regular");
-    const quizAnswer7 = document.querySelector(".quiz__answer7--regular");
-    const quizAnswer8 = document.querySelector(".quiz__answer8--regular");
-    const quizAnswer9 = document.querySelector(".quiz__answer9--regular");
-    const quizAnswer10 = document.querySelector(".quiz__answer10--regular");
+    const quizAnswer1 = document.querySelector(".js-quiz__answer1--regular");
+    const quizAnswer2 = document.querySelector(".js-quiz__answer2--regular");
+    const quizAnswer3 = document.querySelector(".js-quiz__answer3--regular");
+    const quizAnswer4 = document.querySelector(".js-quiz__answer4--regular");
+    const quizAnswer5 = document.querySelector(".js-quiz__answer5--regular");
+    const quizAnswer6 = document.querySelector(".js-quiz__answer6--regular");
+    const quizAnswer7 = document.querySelector(".js-quiz__answer7--regular");
+    const quizAnswer8 = document.querySelector(".js-quiz__answer8--regular");
+    const quizAnswer9 = document.querySelector(".js-quiz__answer9--regular");
+    const quizAnswer10 = document.querySelector(".js-quiz__answer10--regular");
 
     const result = document.querySelector(".js-result");
 
@@ -40,16 +40,16 @@
             question10True.checked
         );
 
-        quizAnswer1.classList.add("quiz__answer--correct");
-        quizAnswer2.classList.add("quiz__answer--correct");
-        quizAnswer3.classList.add("quiz__answer--correct");
-        quizAnswer4.classList.add("quiz__answer--correct");
-        quizAnswer5.classList.add("quiz__answer--correct");
-        quizAnswer6.classList.add("quiz__answer--correct");
-        quizAnswer7.classList.add("quiz__answer--correct");
-        quizAnswer8.classList.add("quiz__answer--correct");
-        quizAnswer9.classList.add("quiz__answer--correct");
-        quizAnswer10.classList.add("quiz__answer--correct");
+        quizAnswer1.classList.add("js-quiz__answer--correct");
+        quizAnswer2.classList.add("js-quiz__answer--correct");
+        quizAnswer3.classList.add("js-quiz__answer--correct");
+        quizAnswer4.classList.add("js-quiz__answer--correct");
+        quizAnswer5.classList.add("js-quiz__answer--correct");
+        quizAnswer6.classList.add("js-quiz__answer--correct");
+        quizAnswer7.classList.add("js-quiz__answer--correct");
+        quizAnswer8.classList.add("js-quiz__answer--correct");
+        quizAnswer9.classList.add("js-quiz__answer--correct");
+        quizAnswer10.classList.add("js-quiz__answer--correct");
 
         
         result.innerText = `Your score is ${sum} / 10 points`;
@@ -57,16 +57,16 @@
 
     const quizReset = () => {
 
-        quizAnswer1.classList.remove("quiz__answer--correct");
-        quizAnswer2.classList.remove("quiz__answer--correct");
-        quizAnswer3.classList.remove("quiz__answer--correct");
-        quizAnswer4.classList.remove("quiz__answer--correct");
-        quizAnswer5.classList.remove("quiz__answer--correct");
-        quizAnswer6.classList.remove("quiz__answer--correct");
-        quizAnswer7.classList.remove("quiz__answer--correct");
-        quizAnswer8.classList.remove("quiz__answer--correct");
-        quizAnswer9.classList.remove("quiz__answer--correct");
-        quizAnswer10.classList.remove("quiz__answer--correct");
+        quizAnswer1.classList.remove("js-quiz__answer--correct");
+        quizAnswer2.classList.remove("js-quiz__answer--correct");
+        quizAnswer3.classList.remove("js-quiz__answer--correct");
+        quizAnswer4.classList.remove("js-quiz__answer--correct");
+        quizAnswer5.classList.remove("js-quiz__answer--correct");
+        quizAnswer6.classList.remove("js-quiz__answer--correct");
+        quizAnswer7.classList.remove("js-quiz__answer--correct");
+        quizAnswer8.classList.remove("js-quiz__answer--correct");
+        quizAnswer9.classList.remove("js-quiz__answer--correct");
+        quizAnswer10.classList.remove("js-quiz__answer--correct");
 
         result.innerText = `Quiz was reset`;
     }
