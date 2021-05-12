@@ -1,14 +1,5 @@
 {
-    const question1True = document.querySelector(".js-answer1");
-    const question2True = document.querySelector(".js-answer2");
-    const question3True = document.querySelector(".js-answer3");
-    const question4True = document.querySelector(".js-answer4");
-    const question5True = document.querySelector(".js-answer5");
-    const question6True = document.querySelector(".js-answer6");
-    const question7True = document.querySelector(".js-answer7");
-    const question8True = document.querySelector(".js-answer8");
-    const question9True = document.querySelector(".js-answer9");
-    const question10True = document.querySelector(".js-answer10");
+    const quiz = document.querySelector(".js-quiz");
 
     const quizAnswer1 = document.querySelector(".js-quiz__answer1--regular");
     const quizAnswer2 = document.querySelector(".js-quiz__answer2--regular");
@@ -21,12 +12,20 @@
     const quizAnswer9 = document.querySelector(".js-quiz__answer9--regular");
     const quizAnswer10 = document.querySelector(".js-quiz__answer10--regular");
 
+    const question1True = document.querySelector(".js-answer1");
+    const question2True = document.querySelector(".js-answer2");
+    const question3True = document.querySelector(".js-answer3");
+    const question4True = document.querySelector(".js-answer4");
+    const question5True = document.querySelector(".js-answer5");
+    const question6True = document.querySelector(".js-answer6");
+    const question7True = document.querySelector(".js-answer7");
+    const question8True = document.querySelector(".js-answer8");
+    const question9True = document.querySelector(".js-answer9");
+    const question10True = document.querySelector(".js-answer10");
+
     const result = document.querySelector(".js-result");
 
-
-    const onSubmitQuiz = (event) => {
-        event.preventDefault();
-
+    const getResult = () => {
         const sum = (
             question1True.checked +
             question2True.checked +
@@ -39,7 +38,9 @@
             question9True.checked +
             question10True.checked
         );
+    };
 
+    const showAnswers = () => {
         quizAnswer1.classList.add("js-quiz__answer--correct");
         quizAnswer2.classList.add("js-quiz__answer--correct");
         quizAnswer3.classList.add("js-quiz__answer--correct");
@@ -50,13 +51,9 @@
         quizAnswer8.classList.add("js-quiz__answer--correct");
         quizAnswer9.classList.add("js-quiz__answer--correct");
         quizAnswer10.classList.add("js-quiz__answer--correct");
-
-        
-        result.innerText = `Your score is ${sum} / 10 points`;
-    }
+    };
 
     const quizReset = () => {
-
         quizAnswer1.classList.remove("js-quiz__answer--correct");
         quizAnswer2.classList.remove("js-quiz__answer--correct");
         quizAnswer3.classList.remove("js-quiz__answer--correct");
@@ -67,16 +64,20 @@
         quizAnswer8.classList.remove("js-quiz__answer--correct");
         quizAnswer9.classList.remove("js-quiz__answer--correct");
         quizAnswer10.classList.remove("js-quiz__answer--correct");
-
+        
         result.innerText = `Quiz was reset`;
-    }
+    };
 
+    const onSubmitQuiz = (event) => {
+        event.preventDefault();
+        const points = getResult();
 
+        result.innerText = `Your score is ${points} / 10 points`;
+
+        showAnswers();
+    };
 
     const init = () => {
-        const quiz = document.querySelector(".js-quiz");
-        
-
         quiz.addEventListener("submit", onSubmitQuiz);
         quiz.addEventListener("reset", quizReset);
     };
