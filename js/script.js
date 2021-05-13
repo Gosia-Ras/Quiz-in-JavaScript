@@ -1,17 +1,6 @@
 {
     const quiz = document.querySelector(".js-quiz");
 
-    const quizAnswer1 = document.querySelector(".js-quiz__answer1--regular");
-    const quizAnswer2 = document.querySelector(".js-quiz__answer2--regular");
-    const quizAnswer3 = document.querySelector(".js-quiz__answer3--regular");
-    const quizAnswer4 = document.querySelector(".js-quiz__answer4--regular");
-    const quizAnswer5 = document.querySelector(".js-quiz__answer5--regular");
-    const quizAnswer6 = document.querySelector(".js-quiz__answer6--regular");
-    const quizAnswer7 = document.querySelector(".js-quiz__answer7--regular");
-    const quizAnswer8 = document.querySelector(".js-quiz__answer8--regular");
-    const quizAnswer9 = document.querySelector(".js-quiz__answer9--regular");
-    const quizAnswer10 = document.querySelector(".js-quiz__answer10--regular");
-
     const question1True = document.querySelector(".js-answer1");
     const question2True = document.querySelector(".js-answer2");
     const question3True = document.querySelector(".js-answer3");
@@ -22,6 +11,17 @@
     const question8True = document.querySelector(".js-answer8");
     const question9True = document.querySelector(".js-answer9");
     const question10True = document.querySelector(".js-answer10");
+
+    const quizAnswer1 = document.querySelector(".js-quiz__answer1--regular");
+    const quizAnswer2 = document.querySelector(".js-quiz__answer2--regular");
+    const quizAnswer3 = document.querySelector(".js-quiz__answer3--regular");
+    const quizAnswer4 = document.querySelector(".js-quiz__answer4--regular");
+    const quizAnswer5 = document.querySelector(".js-quiz__answer5--regular");
+    const quizAnswer6 = document.querySelector(".js-quiz__answer6--regular");
+    const quizAnswer7 = document.querySelector(".js-quiz__answer7--regular");
+    const quizAnswer8 = document.querySelector(".js-quiz__answer8--regular");
+    const quizAnswer9 = document.querySelector(".js-quiz__answer9--regular");
+    const quizAnswer10 = document.querySelector(".js-quiz__answer10--regular");
 
     const result = document.querySelector(".js-result");
 
@@ -65,9 +65,7 @@
             question8True.checked +
             question9True.checked +
             question10True.checked
-
         );
-
         return sum;
     };
 
