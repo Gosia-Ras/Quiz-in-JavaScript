@@ -25,21 +25,6 @@
 
     const result = document.querySelector(".js-result");
 
-    const getResult = () => {
-        const sum = (
-            question1True.checked +
-            question2True.checked +
-            question3True.checked +
-            question4True.checked +
-            question5True.checked +
-            question6True.checked +
-            question7True.checked +
-            question8True.checked +
-            question9True.checked +
-            question10True.checked
-        );
-    };
-
     const showAnswers = () => {
         quizAnswer1.classList.add("js-quiz__answer--correct");
         quizAnswer2.classList.add("js-quiz__answer--correct");
@@ -64,8 +49,26 @@
         quizAnswer8.classList.remove("js-quiz__answer--correct");
         quizAnswer9.classList.remove("js-quiz__answer--correct");
         quizAnswer10.classList.remove("js-quiz__answer--correct");
-        
+
         result.innerText = `Quiz was reset`;
+    };
+
+    const getResult = () => {
+        const sum = (
+            question1True.checked +
+            question2True.checked +
+            question3True.checked +
+            question4True.checked +
+            question5True.checked +
+            question6True.checked +
+            question7True.checked +
+            question8True.checked +
+            question9True.checked +
+            question10True.checked
+
+        );
+
+        return sum;
     };
 
     const onSubmitQuiz = (event) => {
