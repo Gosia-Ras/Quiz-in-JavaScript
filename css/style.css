@@ -11,7 +11,7 @@ html {
 .body {
   margin: 0px auto;
   width: 1000px;
-  background-color: beige;
   font-family: "Raleway", sans-serif;
-  color: gray;
+  background-image: url(../images/background.png);
+  padding: 50px;
 }
