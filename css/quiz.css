@@ -6,6 +6,15 @@
   z-index: 1;
   opacity: 0;
   transition: opacity 0.5s;
+  padding: 10px;
+}
+
+.question {
+  padding: 10px;
+}
+
+.answers {
+  padding: 10px;
 }
 
 .active-slide {
@@ -21,22 +30,6 @@
   margin: 0px auto;
 }
 
-.button-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  justify-items: center;
-}
-
-.button {
-  padding: 5px;
-  background-color: white;
-  border: 2px solid rgb(1, 95, 95);
-  margin-top: 5px;
-  max-width: fit-content;
-}
-
 .results {
   padding: 15px;
   max-width: fit-content;
@@ -47,10 +40,10 @@
   background-color: white;
 }
 
-.answer__correct {
+.answer--correct {
   color: lightgreen;
 }
 
-.answer__incorrect {
+.answer--incorrect {
   color: rgb(248, 82, 82);
 }
