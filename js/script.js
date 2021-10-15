@@ -1,88 +1,146 @@
 {
-    const quiz = document.querySelector(".js-quiz");
+  const quizContainer = document.getElementById("quiz");
+  const resultsContainer = document.getElementById("results");
+  const submitButton = document.getElementById("submit");
 
-    const question1True = document.querySelector(".js-answer1");
-    const question2True = document.querySelector(".js-answer2");
-    const question3True = document.querySelector(".js-answer3");
-    const question4True = document.querySelector(".js-answer4");
-    const question5True = document.querySelector(".js-answer5");
-    const question6True = document.querySelector(".js-answer6");
-    const question7True = document.querySelector(".js-answer7");
-    const question8True = document.querySelector(".js-answer8");
-    const question9True = document.querySelector(".js-answer9");
-    const question10True = document.querySelector(".js-answer10");
+  const buildQuiz = () => {
+    const output = [];
 
-    const quizAnswer1 = document.querySelector(".js-quiz__answer1--regular");
-    const quizAnswer2 = document.querySelector(".js-quiz__answer2--regular");
-    const quizAnswer3 = document.querySelector(".js-quiz__answer3--regular");
-    const quizAnswer4 = document.querySelector(".js-quiz__answer4--regular");
-    const quizAnswer5 = document.querySelector(".js-quiz__answer5--regular");
-    const quizAnswer6 = document.querySelector(".js-quiz__answer6--regular");
-    const quizAnswer7 = document.querySelector(".js-quiz__answer7--regular");
-    const quizAnswer8 = document.querySelector(".js-quiz__answer8--regular");
-    const quizAnswer9 = document.querySelector(".js-quiz__answer9--regular");
-    const quizAnswer10 = document.querySelector(".js-quiz__answer10--regular");
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      const answers = [];
 
-    const result = document.querySelector(".js-result");
-
-    const showAnswers = () => {
-        quizAnswer1.classList.add("js-quiz__answer--correct");
-        quizAnswer2.classList.add("js-quiz__answer--correct");
-        quizAnswer3.classList.add("js-quiz__answer--correct");
-        quizAnswer4.classList.add("js-quiz__answer--correct");
-        quizAnswer5.classList.add("js-quiz__answer--correct");
-        quizAnswer6.classList.add("js-quiz__answer--correct");
-        quizAnswer7.classList.add("js-quiz__answer--correct");
-        quizAnswer8.classList.add("js-quiz__answer--correct");
-        quizAnswer9.classList.add("js-quiz__answer--correct");
-        quizAnswer10.classList.add("js-quiz__answer--correct");
-    };
-
-    const quizReset = () => {
-        quizAnswer1.classList.remove("js-quiz__answer--correct");
-        quizAnswer2.classList.remove("js-quiz__answer--correct");
-        quizAnswer3.classList.remove("js-quiz__answer--correct");
-        quizAnswer4.classList.remove("js-quiz__answer--correct");
-        quizAnswer5.classList.remove("js-quiz__answer--correct");
-        quizAnswer6.classList.remove("js-quiz__answer--correct");
-        quizAnswer7.classList.remove("js-quiz__answer--correct");
-        quizAnswer8.classList.remove("js-quiz__answer--correct");
-        quizAnswer9.classList.remove("js-quiz__answer--correct");
-        quizAnswer10.classList.remove("js-quiz__answer--correct");
-
-        result.innerText = `Quiz was reset`;
-    };
-
-    const getResult = () => {
-        const sum = (
-            question1True.checked +
-            question2True.checked +
-            question3True.checked +
-            question4True.checked +
-            question5True.checked +
-            question6True.checked +
-            question7True.checked +
-            question8True.checked +
-            question9True.checked +
-            question10True.checked
+      for (letter in currentQuestion.answers) {
+        answers.push(
+          `<label>
+                <input type="radio" name="question${questionNumber}" value="${letter}">
+                ${letter} :
+                ${currentQuestion.answers[letter]}
+              </label>`
         );
-        return sum;
+      }
+      output.push(
+        `<div class="slide">
+          <div class="question"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join("")} </div>
+        </div>`
+      );
+    });
+    quizContainer.innerHTML = output.join("");
+  };
+
+  const showResults = () => {
+    const answerContainers = quizContainer.querySelectorAll(".answers");
+
+    let numCorrect = 0;
+
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      if (userAnswer === currentQuestion.correctAnswer) {
+        numCorrect++;
+
+        answerContainers[questionNumber].style.color = "lightgreen";
+      } else {
+        answerContainers[questionNumber].style.color = "red";
+      }
+    });
+    resultsContainer.innerHTML = `You receive ${numCorrect} out of ${myQuestions.length} points`;
+  };
+
+  const myQuestions = [
+    {
+      question: "What is the capital city of the United States?",
+      answers: {
+        a: "Los Angeles",
+        b: "Washington",
+        c: "Paris",
+      },
+      correctAnswer: "b",
+    },
+    {
+      question: "How many continents are there?",
+      answers: {
+        a: "2",
+        b: "10",
+        c: "6",
+      },
+      correctAnswer: "c",
+    },
+    {
+      question: "Which animal is not a mammal?",
+      answers: {
+        a: "Dog",
+        b: "Dolphin",
+        c: "Chicken",
+        d: "Deer",
+      },
+      correctAnswer: "c",
+    },
+    {
+      question: "How many hours does a day have?",
+      answers: {
+        a: "24",
+        b: "20",
+        c: "5",
+      },
+      correctAnswer: "a",
+    },
+    {
+      question: "Which of there is not a country?",
+      answers: {
+        a: "France",
+        b: "Russia",
+        c: "Egypt",
+        d: "London",
+      },
+      correctAnswer: "d",
+    },
+  ];
+
+  buildQuiz();
+
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  // change button styling
+
+  const showSlide = (n) => {
+    slides[currentSlide].classList.remove("active-slide");
+    slides[n].classList.add("active-slide");
+    currentSlide = n;
+    if (currentSlide === 0) {
+      previousButton.style.display = "none";
+    } else {
+      previousButton.style.display = "inline-block";
+    }
+    if (currentSlide === slides.length - 1) {
+      nextButton.style.display = "none";
+      submitButton.style.display = "inline-block";
+    } else {
+      nextButton.style.display = "inline-block";
+      submitButton.style.display = "none";
+    }
+  };
+
+  const init = () => {
+    showSlide(currentSlide);
+
+    const showNextSlide = () => {
+      showSlide(currentSlide + 1);
     };
 
-    const onSubmitQuiz = (event) => {
-        event.preventDefault();
-        const points = getResult();
-
-        result.innerText = `Your score is ${points} / 10 points`;
-
-        showAnswers();
+    const showPreviousSlide = () => {
+      showSlide(currentSlide - 1);
     };
 
-    const init = () => {
-        quiz.addEventListener("submit", onSubmitQuiz);
-        quiz.addEventListener("reset", quizReset);
-    };
+    previousButton.addEventListener("click", showPreviousSlide);
+    nextButton.addEventListener("click", showNextSlide);
+    submitButton.addEventListener("click", showResults);
+  };
 
-    init();
-
+  init();
 }

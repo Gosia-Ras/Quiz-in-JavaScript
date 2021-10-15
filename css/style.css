@@ -1,16 +1,17 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*, ::after, ::before {
-    box-sizing: inherit;
+*,
+::after,
+::before {
+  box-sizing: inherit;
 }
 
 .body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(210, 231, 231);
-    max-width: 1000px;
-    margin: 0px auto;
+  margin: 0px auto;
+  width: 1000px;
+  background-color: beige;
+  font-family: "Raleway", sans-serif;
+  color: gray;
 }
-
-
