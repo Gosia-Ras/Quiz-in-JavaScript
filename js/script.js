@@ -41,9 +41,9 @@
       if (userAnswer === currentQuestion.correctAnswer) {
         numCorrect++;
 
-        answerContainers[questionNumber].classList.add("answer__correct");
+        answerContainers[questionNumber].classList.add("answer--correct");
       } else {
-        answerContainers[questionNumber].classList.add("answer__incorrect");
+        answerContainers[questionNumber].classList.add("answer--incorrect");
       }
     });
     resultsContainer.classList.add("results--visible")
