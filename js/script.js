@@ -41,11 +41,12 @@
       if (userAnswer === currentQuestion.correctAnswer) {
         numCorrect++;
 
-        answerContainers[questionNumber].style.color = "lightgreen";
+        answerContainers[questionNumber].classList.add("answer__correct");
       } else {
-        answerContainers[questionNumber].style.color = "red";
+        answerContainers[questionNumber].classList.add("answer__incorrect");
       }
     });
+    resultsContainer.classList.add("results--visible")
     resultsContainer.innerHTML = `You receive ${numCorrect} out of ${myQuestions.length} points`;
   };
 
@@ -88,7 +89,7 @@
       correctAnswer: "a",
     },
     {
-      question: "Which of there is not a country?",
+      question: "Which of these is not a country?",
       answers: {
         a: "France",
         b: "Russia",
