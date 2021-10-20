@@ -45,12 +45,12 @@
       }
     });
     resultsContainer.classList.add("results--visible");
-    resultsContainer.innerHTML = `You receive ${numCorrect} out of ${myQuestions.length} points`;
+    resultsContainer.innerHTML = `You receive ${numCorrect} out of ${myQuestions.length} points <br> Correct answers: 1b; 2c; 3d; 4a; 5d`;
   };
 
   const myQuestions = [
     {
-      question: "What is the capital city of the United States?",
+      question: "1. What is the capital city of the United States?",
       answers: {
         a: "Los Angeles",
         b: "Washington",
@@ -59,7 +59,7 @@
       correctAnswer: "b",
     },
     {
-      question: "How many continents are there?",
+      question: "2. How many continents are there?",
       answers: {
         a: "2",
         b: "10",
@@ -68,7 +68,7 @@
       correctAnswer: "c",
     },
     {
-      question: "Which animal is not a mammal?",
+      question: "3. Which animal is not a mammal?",
       answers: {
         a: "Dog",
         b: "Dolphin",
@@ -78,7 +78,7 @@
       correctAnswer: "c",
     },
     {
-      question: "How many hours does a day have?",
+      question: "4. How many hours does a day have?",
       answers: {
         a: "24",
         b: "20",
@@ -87,7 +87,7 @@
       correctAnswer: "a",
     },
     {
-      question: "Which of these is not a country?",
+      question: "5. Which of these is not a country?",
       answers: {
         a: "France",
         b: "Russia",
