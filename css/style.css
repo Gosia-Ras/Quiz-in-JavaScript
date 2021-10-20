@@ -13,6 +13,7 @@ html {
   width: 1000px;
   font-family: "Raleway", sans-serif;
   background-image: url(../images/background.png);
+  background-repeat: no-repeat;
   padding: 50px;
 }
 
@@ -20,6 +21,10 @@ html {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: rgba(248, 244, 238, 0.815);
+  max-width: fit-content;
+  margin: 0px auto;
+  padding: 100px;
 }
 
 main {
